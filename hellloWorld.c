@@ -165,5 +165,5 @@ int add(int x,int y)
 	answer = x + y;
 	printf("add関数のアドレスは%p,add関数のサイズは%d\n",&add,(int)sizeof(add));
 	printf("answerのあどれすは%p,answerのサイズは%d\n",&answer,(int)sizeof(answer));
-	return(0);
+	return answer;
 }

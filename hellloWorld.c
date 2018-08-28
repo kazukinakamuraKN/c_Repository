@@ -28,6 +28,9 @@ void test()
 	int returnTest();
 	void ifTest();
 	void switchTest();
+	void whileTest();
+	void doWhileTest();
+	int add(int,int);
 	charTest();
 	intTest();
 	shortTest();
@@ -35,6 +38,13 @@ void test()
 	returnTest();
 	ifTest();
 	switchTest();
+	whileTest();
+	doWhileTest();
+	int a = 10;
+	int b = 30;
+	int c;
+	c = add(a,b);
+	printf("a + b = %d\n",c);
 }
 
 void charTest()
@@ -126,4 +136,34 @@ void switchTest()
 	case 'b': printf("break\n");
 	break;
 	}
+}
+
+void whileTest()
+{
+	int cnt = 10;
+	printf("カウント\n");
+	while(cnt >0)
+	{
+		printf("%d\n",cnt);
+		--cnt;
+	}
+	printf("0\n!!\n!\n");
+}
+
+void doWhileTest()
+{
+	int cnt = 10;
+	do
+	{
+		printf("dowhile-%d\n",cnt);
+	}while(--cnt>0);
+}
+
+int add(int x,int y)
+{
+	int answer;
+	answer = x + y;
+	printf("add関数のアドレスは%p,add関数のサイズは%d\n",&add,(int)sizeof(add));
+	printf("answerのあどれすは%p,answerのサイズは%d\n",&answer,(int)sizeof(answer));
+	return(0);
 }

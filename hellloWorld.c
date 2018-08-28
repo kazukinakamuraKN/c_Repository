@@ -27,12 +27,14 @@ void test()
 	void typedefStructTest();
 	int returnTest();
 	void ifTest();
+	void switchTest();
 	charTest();
 	intTest();
 	shortTest();
 	typedefStructTest();
 	returnTest();
 	ifTest();
+	switchTest();
 }
 
 void charTest()
@@ -88,5 +90,40 @@ void ifTest()
 		printf("0なのか0以外かで判定できます\n");
 	}else{
 		printf("0ならばelse0以外はtrueです\n");
+	}
+}
+
+void switchTest()
+{
+	char x = 'r';
+	switch(x)
+	{
+	case 1: printf("BLACK\n");
+	break;
+	case 'r': printf("YELLOW\n");
+	break;
+	case 'e': printf("RED\n");
+	break;
+	//defaultはdefaultのみ。case defaultではない！
+	default : printf("default\n");
+	break;
+	}
+
+	//switchの中にswitchを書いてif文のようにできる。
+	switch(x)
+	{
+	case 'r': printf("ra\n");
+	break;
+		switch(x)
+		{
+		case 'r': printf("rb\n");
+		break;
+		default : printf("default\n");
+		break;
+		}break;//ここにbreakを入れたらerrorが消えた。
+	case 'a': printf("breakなし\n");
+	break;
+	case 'b': printf("break\n");
+	break;
 	}
 }
